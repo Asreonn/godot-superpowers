@@ -2,6 +2,32 @@
 
 All notable changes to Godot Superpowers will be documented in this file.
 
+## [Unreleased]
+
+- Scene Hierarchy Cleaner skill (planned)
+- Scene Layout Organizer skill (planned)
+- Additional documentation examples
+
+## [2.0.0] - 2026-02-02
+
+### Added - Editor Position Sync Skill
+- **NEW SKILL**: Editor Position Sync - Fix position conflicts between editor (.tscn) and code (.gd)
+- Intelligent position conflict detection
+- Camera-aware positioning for backgrounds and parallax layers
+- Three sync strategies: CODE_TO_EDITOR, EDITOR_TO_CODE, CAMERA_AWARE
+- Automatic classification: CONFLICT, INTENTIONAL_DYNAMIC, INTENTIONAL_ANIMATION, PROCESS_ASSIGNMENT
+- Camera start position detection from main scene
+- Special handling for parallax backgrounds
+- Documentation for camera-following elements
+- Automatic validation and rollback on errors
+- Git commits per sync operation
+
+### Enhanced
+- Updated README with third skill documentation
+- Added installation instructions for editor-position-sync
+- Updated statistics (3 skills, 15,000+ lines of documentation)
+- Complete documentation set for editor-position-sync
+
 ## [1.0.0] - 2026-02-02
 
 ### Added
