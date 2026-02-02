@@ -1,12 +1,17 @@
-# Project Structure Organizer Skill
+# Godot Superpowers - Project Structure
 
 Scan and intelligently reorganize Godot project folder structure for optimal organization.
 
 ## Quick Start
 
+Navigate to your Godot project directory and use Claude Code:
+
 ```bash
-# In your Godot project directory
-> Reorganize project structure using project-structure-organizer skill
+cd /path/to/your/godot/project
+claude
+
+# Then in Claude Code:
+> Use project-structure-organizer to analyze this Godot project
 ```
 
 ## What It Does

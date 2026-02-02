@@ -1,12 +1,17 @@
-# Godot Refactoring Skill
+# Godot Superpowers - Refactoring
 
 Automatically refactor Godot projects to clean, modular architecture with zero functional changes.
 
 ## Quick Start
 
+Navigate to your Godot project directory and use Claude Code:
+
 ```bash
-# In your Godot project directory
-> Refactor this Godot project using godot-refactoring skill
+cd /path/to/your/godot/project
+claude
+
+# Then in Claude Code:
+> Use godot-refactoring to analyze this Godot project
 ```
 
 ## What It Does

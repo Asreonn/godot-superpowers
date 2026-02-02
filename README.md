@@ -1,10 +1,10 @@
 # Godot Superpowers 🚀
 
-Professional Godot project refactoring and organization skills for Claude Code CLI.
+Professional Godot project automation skills for Claude Code CLI.
 
 ## What's Included
 
-### 1. Godot Refactoring Skill
+### 1. Godot Superpowers - Refactoring
 Automatically refactor Godot projects to clean, modular architecture with zero functional changes.
 
 **Features:**
@@ -17,7 +17,7 @@ Automatically refactor Godot projects to clean, modular architecture with zero f
 
 [➡️ Read more](./godot-refactoring/)
 
-### 2. Project Structure Organizer Skill
+### 2. Godot Superpowers - Project Structure
 Scan and intelligently reorganize project folder structure for optimal organization.
 
 **Features:**
@@ -31,54 +31,70 @@ Scan and intelligently reorganize project folder structure for optimal organizat
 
 ## Installation
 
-### Quick Install (Recommended)
+### Step 1: Clone This Repository
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/godot-superpowers.git
-
-# Install both skills
+git clone https://github.com/asreonn/godot-superpowers.git
 cd godot-superpowers
+```
 
-# Install godot-refactoring
+### Step 2: Install Godot Superpowers Skills
+
+Choose your installation method below:
+
+#### Option A: Install Both Skills
+
+```bash
+# Copy both skills to your Claude Code skills directory
 cp -r godot-refactoring ~/.config/opencode/superpowers/skills/
-
-# Install project-structure-organizer
 cp project-structure-organizer/SKILL.md ~/.config/opencode/superpowers/skills/project-structure-organizer.md
 ```
 
-### Individual Skill Installation
+#### Option B: Install Only Refactoring Skill
 
-**Install just godot-refactoring:**
 ```bash
+# Copy just the refactoring skill
 cp -r godot-refactoring ~/.config/opencode/superpowers/skills/
 ```
 
-**Install just project-structure-organizer:**
+#### Option C: Install Only Project Structure Skill
+
 ```bash
+# Copy just the project structure organizer
 cp project-structure-organizer/SKILL.md ~/.config/opencode/superpowers/skills/project-structure-organizer.md
 ```
 
-[➡️ Detailed installation instructions](./INSTALLATION.md)
+### Step 3: Verify Installation
 
-## Usage
+Restart Claude Code CLI and the skills will be available in your commands.
 
-### godot-refactoring
+## How to Use
+
+### In Claude Code CLI
+
+Navigate to your Godot project folder:
+
+```bash
+cd /path/to/your/godot/project
+claude
 ```
-In your Godot project directory:
-> Refactor this Godot project using godot-refactoring skill
 
-The skill will automatically:
+Then use the skills:
+
+**For Refactoring:**
+```
+> Use godot-refactoring to analyze this Godot project
+
+The skill will:
 1. Detect anti-patterns
-2. Refactor to clean architecture
+2. Suggest refactoring operations
 3. Create git commits
 4. Preserve behavior exactly
 ```
 
-### project-structure-organizer
+**For Project Structure:**
 ```
-In your Godot project directory:
-> Reorganize project structure using project-structure-organizer skill
+> Use project-structure-organizer to reorganize this project structure
 
 The skill will:
 1. Analyze current structure
@@ -87,20 +103,35 @@ The skill will:
 4. Update all references
 ```
 
+### In Claude.ai Web (With Claude Code Extension)
+
+If you have Claude Code extension installed:
+1. Create a new project in Claude Code
+2. Upload your Godot project files
+3. Use the same commands as above
+
+### In OpenCode / Other Claude Code Variants
+
+The skills work with any Claude Code-compatible environment:
+1. Ensure `~/.config/opencode/superpowers/skills/` directory exists
+2. Copy skill folders using the installation commands above
+3. Restart your Claude Code environment
+4. Skills will be available immediately
+
 ## Requirements
 
-- **Claude Code CLI** (Superpowers framework)
-- **Godot 4.x** projects
-- **Git** for version control
-- Standard Unix tools (grep, find, awk)
+- **Claude Code CLI** - Download from [anthropics/claude-code](https://github.com/anthropics/claude-code)
+- **Godot 4.x** - Download from [godotengine.org](https://godotengine.org/)
+- **Git** for version control - Usually pre-installed on Linux/Mac, [download for Windows](https://git-scm.com/)
+- Standard Unix tools (grep, find, awk) - Pre-installed on Linux/Mac, included in Git Bash on Windows
 
 ## Documentation
 
-- [Installation Guide](./INSTALLATION.md)
-- [Godot Refactoring Docs](./godot-refactoring/)
-- [Project Organizer Docs](./project-structure-organizer/)
-- [Contributing](./CONTRIBUTING.md)
-- [Changelog](./CHANGELOG.md)
+- [Godot Superpowers - Refactoring](./godot-refactoring/) - Complete skill documentation
+- [Godot Superpowers - Project Structure](./project-structure-organizer/) - Complete skill documentation
+- [Detailed Installation Guide](./INSTALLATION.md) - Step-by-step for all platforms
+- [Contributing Guide](./CONTRIBUTING.md) - How to contribute
+- [Changelog](./CHANGELOG.md) - Version history and updates
 
 ## Features Highlight
 
@@ -122,32 +153,45 @@ The skill will:
 - Automatic rollback on failure
 - Iron Law: NO functional changes
 
-## Examples
+## Examples & Guides
 
 See detailed examples in:
-- [godot-refactoring/EXAMPLES.md](./godot-refactoring/EXAMPLES.md)
-- [godot-refactoring/docs/](./godot-refactoring/docs/)
+- [Godot Superpowers - Refactoring Examples](./godot-refactoring/EXAMPLES.md)
+- [Comprehensive Documentation](./godot-refactoring/docs/)
+- [Complete Index & Navigation](./godot-refactoring/INDEX.md)
 
 ## Statistics
 
 - **12,800+ lines** of comprehensive documentation
 - **150+ Godot nodes** cataloged and documented
-- **5 automatic operations** for refactoring
+- **5 automatic operations** for automation
 - **Production ready** and battle-tested
+- **2 professional skills** included
+
+## Quick Start Video
+
+1. Clone the repository
+2. Copy skills to `~/.config/opencode/superpowers/skills/`
+3. Open your Godot project
+4. Use `claude` command in terminal
+5. Invoke Godot Superpowers skills
 
 ## License
 
 MIT License - See [LICENSE](./LICENSE)
 
+Godot is © Copyright 2014-present Juan Linietsky, Ariel Manzur and the Godot community.
+
 ## Contributing
 
 Contributions welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-## Author
+## Created for the Godot Community
 
-Created for the Godot community 💙
+These skills are designed to help Godot developers maintain clean, modular projects with professional-grade automation. 💙
 
-## Support
+## Support & Issues
 
-- [GitHub Issues](https://github.com/YOUR_USERNAME/godot-superpowers/issues)
-- [Discussions](https://github.com/YOUR_USERNAME/godot-superpowers/discussions)
+- 📋 [GitHub Issues](https://github.com/asreonn/godot-superpowers/issues) - Report bugs or suggest features
+- 💬 [GitHub Discussions](https://github.com/asreonn/godot-superpowers/discussions) - Ask questions and discuss
+- 📖 [Full Documentation](./godot-refactoring/) - Detailed guides and examples
