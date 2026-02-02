@@ -26,6 +26,8 @@ platforms:
   - linux
   - macos
   - windows
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
 ---
 
 # Godot UI Modernization
