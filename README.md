@@ -29,6 +29,19 @@ Scan and intelligently reorganize project folder structure for optimal organizat
 
 [➡️ Read more](./project-structure-organizer/)
 
+### 3. Godot Superpowers - Editor Position Sync
+Fix position conflicts between Godot editor (.tscn) and code (.gd) - make editor preview match runtime.
+
+**Features:**
+- Detect position conflicts (editor vs code)
+- Intelligent classification (intentional vs conflict)
+- Camera-aware positioning for backgrounds
+- Parallax layer handling
+- Three sync strategies (Code→Editor, Editor→Code, Camera-Aware)
+- Special handling for camera-following elements
+
+[➡️ Read more](./editor-position-sync/)
+
 ## Installation
 
 ### Step 1: Clone This Repository
@@ -42,25 +55,25 @@ cd godot-superpowers
 
 Choose your installation method below:
 
-#### Option A: Install Both Skills
+#### Option A: Install All Skills
 
 ```bash
-# Copy both skills to your Claude Code skills directory
+# Copy all skills to your Claude Code skills directory
 cp -r godot-refactoring ~/.config/opencode/superpowers/skills/
+cp -r editor-position-sync ~/.config/opencode/superpowers/skills/
 cp project-structure-organizer/SKILL.md ~/.config/opencode/superpowers/skills/project-structure-organizer.md
 ```
 
-#### Option B: Install Only Refactoring Skill
+#### Option B: Install Individual Skills
 
 ```bash
-# Copy just the refactoring skill
+# Refactoring skill only
 cp -r godot-refactoring ~/.config/opencode/superpowers/skills/
-```
 
-#### Option C: Install Only Project Structure Skill
+# Editor Position Sync only
+cp -r editor-position-sync ~/.config/opencode/superpowers/skills/
 
-```bash
-# Copy just the project structure organizer
+# Project Structure only
 cp project-structure-organizer/SKILL.md ~/.config/opencode/superpowers/skills/project-structure-organizer.md
 ```
 
@@ -103,6 +116,18 @@ The skill will:
 4. Update all references
 ```
 
+**For Editor Position Sync:**
+```
+> My background follows the camera but appears at (0,0) in the editor
+
+The skill will:
+1. Detect position conflicts
+2. Classify as camera-following
+3. Sync editor position to camera start
+4. Document camera-relative behavior
+5. Make editor preview accurate
+```
+
 ### In Claude.ai Web (With Claude Code Extension)
 
 If you have Claude Code extension installed:
@@ -129,6 +154,7 @@ The skills work with any Claude Code-compatible environment:
 
 - [Godot Superpowers - Refactoring](./godot-refactoring/) - Complete skill documentation
 - [Godot Superpowers - Project Structure](./project-structure-organizer/) - Complete skill documentation
+- [Godot Superpowers - Editor Position Sync](./editor-position-sync/) - Complete skill documentation
 - [Detailed Installation Guide](./INSTALLATION.md) - Step-by-step for all platforms
 - [Contributing Guide](./CONTRIBUTING.md) - How to contribute
 - [Changelog](./CHANGELOG.md) - Version history and updates
@@ -162,11 +188,11 @@ See detailed examples in:
 
 ## Statistics
 
-- **12,800+ lines** of comprehensive documentation
+- **15,000+ lines** of comprehensive documentation
 - **150+ Godot nodes** cataloged and documented
-- **5 automatic operations** for automation
+- **8 automatic operations** for automation (5 refactoring + 3 sync strategies)
 - **Production ready** and battle-tested
-- **2 professional skills** included
+- **3 professional skills** included
 
 ## Quick Start Video
 
