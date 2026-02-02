@@ -1,9 +1,28 @@
 ---
-name: editor-position-sync
-description: Use when Godot project has position conflicts between editor (.tscn) and code (.gd), camera-following backgrounds, or runtime positions don't match editor preview
+name: godot-fix-positions
+summary: Orchestrate all position sync operations
+description: >
+  Use when Godot project has position conflicts between editor (.tscn) and code (.gd),
+  camera-following backgrounds, or runtime positions don't match editor preview.
+  Orchestrates all 3 position sync mini-skills: sync-static-positions, sync-camera-positions,
+  and sync-parallax. Each operation targets specific position conflict types.
+use_cases:
+  - "Node position set in _ready() doesn't match editor preview"
+  - "Background follows camera but editor shows wrong position"
+  - "Parallax layers jump when game starts"
+  - "Want What You See Is What You Get in editor"
+  - "Position conflicts making level design confusing"
+  - "Need to sync all position types at once"
+outputs: "Synced positions, updated .tscn files, clear ownership documentation, git commits per sync type"
+requirements: "Git repository, Godot 4.x"
+execution: "Automatic detection with user-approved sync strategies"
+auto_rollback: "Yes - reverts on validation failure"
+integration: "Orchestrates: godot-sync-static-positions, godot-sync-camera-positions, godot-sync-parallax"
 ---
 
-# Editor Position Sync Skill
+# Godot Fix Positions Orchestrator
+
+**This orchestrator runs 3 position sync mini-skills in sequence. For individual operations, invoke mini-skills directly.**
 
 ## Core Principle: What You See Is What You Get (WYSIWYG)
 

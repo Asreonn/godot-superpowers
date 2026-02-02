@@ -8,6 +8,101 @@ All notable changes to Godot Superpowers will be documented in this file.
 - Scene Layout Organizer skill (planned)
 - Additional documentation examples
 
+## [3.0.0] - 2026-02-02
+
+### Breaking Changes
+
+**Skill Names Changed:**
+- `godot-refactoring` → `godot-refactor`
+- `project-structure-organizer` → `godot-organize-project`
+- `editor-position-sync` → `godot-fix-positions`
+
+**Directory Structure Changed:**
+- Skills moved to `orchestrators/` directory
+- New `mini-skills/` directory added
+
+**Installation Paths Changed:**
+- Old: Install from root directory
+- New: Install from `orchestrators/` or `mini-skills/` directories
+
+See [MIGRATION.md](./MIGRATION.md) for migration guide.
+
+### Added - Mini-Skills Architecture
+
+**11 New Mini-Skills for Granular Operations:**
+
+**Code Quality Mini-Skills (5):**
+- `godot-extract-to-scenes` - Extract code-created objects to .tscn files
+- `godot-split-scripts` - Split monolithic scripts over 150 lines
+- `godot-add-signals` - Replace get_node coupling with signals
+- `godot-extract-resources` - Move const data to .tres resources
+- `godot-clean-conflicts` - Remove conflicting operations
+
+**Organization Mini-Skills (3):**
+- `godot-organize-files` - Organize project folder structure
+- `godot-organize-assets` - Organize assets by type
+- `godot-organize-scripts` - Organize scripts by category
+
+**Position Sync Mini-Skills (3):**
+- `godot-sync-static-positions` - Fix static position conflicts
+- `godot-sync-camera-positions` - Camera-aware background positioning
+- `godot-sync-parallax` - Parallax layer editor preview sync
+
+**3 Orchestrator Skills:**
+- `godot-refactor` - Orchestrates all 5 code quality mini-skills
+- `godot-organize-project` - Orchestrates all 3 organization mini-skills
+- `godot-fix-positions` - Orchestrates all 3 position sync mini-skills
+
+### Enhanced
+
+**Skill Frontmatter:**
+- Added `summary` - One-line description for quick understanding
+- Enhanced `description` with detailed use cases
+- Added `use_cases` - List of problem statements agents can match
+- Added `outputs` - What files/changes the skill produces
+- Added `requirements` - Git, Godot version, tools needed
+- Added `execution` - Automation level and user interaction
+- Added `auto_rollback` - Safety features documented
+- Added `integration` - Compatible skills and workflows
+
+**Documentation:**
+- Complete rewrite of README.md for v3.0 structure
+- New MIGRATION.md guide for v2.x → v3.0 users
+- Each mini-skill has comprehensive SKILL.md documentation
+- Updated installation instructions for new structure
+
+**Agent Discoverability:**
+- Mini-skills are easier for agents to discover by problem description
+- Clear use_cases help agents choose correct skill
+- Focused skill names indicate purpose (extract, split, sync, etc.)
+
+### Features
+
+**Modular Architecture:**
+- Run individual mini-skills for specific operations
+- Run orchestrators for full workflows
+- Mix and match based on needs
+- Clear separation of concerns
+
+**Backwards Compatible Workflows:**
+- Orchestrators maintain v2.x behavior
+- Same automatic analysis and operations
+- Same git commits and rollback
+- Users can upgrade without workflow changes
+
+**Flexibility:**
+- Install only what you need (mini-skills, orchestrators, or both)
+- Granular control over operations
+- Faster execution for single operations
+- Choose between comprehensive or targeted refactoring
+
+### Statistics
+
+- **14 total skills** (11 mini-skills + 3 orchestrators)
+- **15,000+ lines** of comprehensive documentation
+- **Enhanced frontmatter** on all skills
+- **3 installation options** (orchestrators only, mini-skills only, or both)
+
 ## [2.0.0] - 2026-02-02
 
 ### Added - Editor Position Sync Skill

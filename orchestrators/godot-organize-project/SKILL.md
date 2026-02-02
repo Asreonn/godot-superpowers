@@ -1,9 +1,28 @@
 ---
-name: project-structure-organizer
-description: Use when you need to reorganize project folder structure, consolidate similar files, organize resources by type, and create a clean project architecture from current folder chaos
+name: godot-organize-project
+summary: Orchestrate all project organization operations
+description: >
+  Use when you need to reorganize project folder structure, consolidate similar files,
+  organize resources by type, and create a clean project architecture from current folder
+  chaos. Orchestrates all 3 organization mini-skills: organize-files, organize-assets,
+  and organize-scripts. Each operation runs independently with reference preservation.
+use_cases:
+  - "Project files scattered everywhere with no structure"
+  - "Assets and scripts mixed in root directory"
+  - "Can't find files because no organizational system"
+  - "Want to prepare project for team collaboration"
+  - "Need consistent structure across projects"
+  - "Want to organize everything at once"
+outputs: "Organized directory structure, moved files with preserved references, git commits per category"
+requirements: "Git repository, Godot 4.x"
+execution: "Fully automatic with reference preservation"
+auto_rollback: "Yes - reverts on validation failure"
+integration: "Orchestrates: godot-organize-files, godot-organize-assets, godot-organize-scripts"
 ---
 
-# Project Structure Organizer Skill
+# Godot Organize Project Orchestrator
+
+**This orchestrator runs 3 organization mini-skills in sequence. For individual operations, invoke mini-skills directly.**
 
 **Purpose**: Scan and intelligently reorganize Godot project folder structure for optimal organization and maintainability.
 

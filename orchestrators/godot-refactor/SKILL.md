@@ -1,9 +1,30 @@
 ---
-name: godot-refactoring
-description: Use when Godot project has code-created objects, tight coupling via direct references, monolithic scripts over 150 lines, or needs scene-first architecture with signals and composition
+name: godot-refactor
+summary: Orchestrate all code quality refactoring operations
+description: >
+  Use when Godot project has code-created objects, tight coupling via direct references,
+  monolithic scripts over 150 lines, or needs scene-first architecture with signals and
+  composition. Orchestrates all 5 code quality mini-skills: extract-to-scenes, split-scripts,
+  add-signals, extract-resources, and clean-conflicts. Each operation runs independently
+  with git commits and validation.
+use_cases:
+  - "Building new features and code uses .new() instead of scenes"
+  - "Scripts are over 150 lines and do too many things"
+  - "Code has get_node() chains creating tight coupling"
+  - "Game data is hardcoded in const arrays"
+  - "Need clean architecture for team collaboration"
+  - "Preparing code for review or testing"
+  - "Want full project refactoring with all operations"
+outputs: "Component library, split scripts, signal architecture, resource files, git commits per operation"
+requirements: "Git repository, Godot 4.x, bash tools (grep, find, awk)"
+execution: "Fully automatic with user approval after Phase 1 analysis"
+auto_rollback: "Yes - auto-reverts on validation test failure"
+integration: "Orchestrates: godot-extract-to-scenes, godot-split-scripts, godot-add-signals, godot-extract-resources, godot-clean-conflicts"
 ---
 
-# Godot Refactoring Skill
+# Godot Refactor Orchestrator
+
+**This orchestrator runs 5 code quality mini-skills in sequence. For individual operations, invoke mini-skills directly.**
 
 ## Core Principle: Scene-First, Signal-Based, Component Composition
 
