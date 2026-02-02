@@ -40,16 +40,25 @@ cp -r editor-position-sync ~/godot-superpowers-backup/ 2>/dev/null || true
 
 ### Step 2: Remove Old Skills
 
+**For Claude Code:**
 ```bash
-# Remove old skill directories
-rm -rf ~/.config/opencode/superpowers/skills/godot-refactoring
-rm -rf ~/.config/opencode/superpowers/skills/project-structure-organizer
-rm -rf ~/.config/opencode/superpowers/skills/editor-position-sync
+rm -rf ~/.claude/skills/godot-refactoring
+rm -rf ~/.claude/skills/project-structure-organizer
+rm -rf ~/.claude/skills/editor-position-sync
+```
 
-# Or remove individual SKILL.md files if you installed that way
-rm ~/.config/opencode/superpowers/skills/godot-refactoring.md 2>/dev/null || true
-rm ~/.config/opencode/superpowers/skills/project-structure-organizer.md 2>/dev/null || true
-rm ~/.config/opencode/superpowers/skills/editor-position-sync.md 2>/dev/null || true
+**For OpenCode:**
+```bash
+rm -rf ~/.config/opencode/skills/godot-refactoring
+rm -rf ~/.config/opencode/skills/project-structure-organizer
+rm -rf ~/.config/opencode/skills/editor-position-sync
+```
+
+**For Codex:**
+```bash
+rm -rf ~/.codex/skills/godot-refactoring
+rm -rf ~/.codex/skills/project-structure-organizer
+rm -rf ~/.codex/skills/editor-position-sync
 ```
 
 ### Step 3: Install v3.0 Skills
@@ -62,11 +71,14 @@ Choose your installation method:
 cd /path/to/godot-superpowers
 git pull origin main
 
-# Install all mini-skills
-cp -r mini-skills/* ~/.config/opencode/superpowers/skills/
+# For Claude Code
+cp -r mini-skills/* orchestrators/* ~/.claude/skills/
 
-# Install all orchestrators
-cp -r orchestrators/* ~/.config/opencode/superpowers/skills/
+# For OpenCode
+cp -r mini-skills/* orchestrators/* ~/.config/opencode/skills/
+
+# For Codex
+cp -r mini-skills/* orchestrators/* ~/.codex/skills/
 ```
 
 #### Option B: Install Only Orchestrators
@@ -77,8 +89,14 @@ If you want to keep the same workflow as v2.x (full refactoring):
 cd /path/to/godot-superpowers
 git pull origin main
 
-# Install orchestrators only
-cp -r orchestrators/* ~/.config/opencode/superpowers/skills/
+# For Claude Code
+cp -r orchestrators/* ~/.claude/skills/
+
+# For OpenCode
+cp -r orchestrators/* ~/.config/opencode/skills/
+
+# For Codex
+cp -r orchestrators/* ~/.codex/skills/
 ```
 
 #### Option C: Install Only Mini-Skills
@@ -89,31 +107,55 @@ If you want granular control and individual operations:
 cd /path/to/godot-superpowers
 git pull origin main
 
-# Install mini-skills only
-cp -r mini-skills/* ~/.config/opencode/superpowers/skills/
+# For Claude Code
+cp -r mini-skills/* ~/.claude/skills/
+
+# For OpenCode
+cp -r mini-skills/* ~/.config/opencode/skills/
+
+# For Codex
+cp -r mini-skills/* ~/.codex/skills/
 ```
 
 ### Step 4: Verify Installation
 
+**For Claude Code:**
 ```bash
-# List installed skills
-ls ~/.config/opencode/superpowers/skills/
-
-# Should see:
-# - godot-refactor/ (if orchestrators installed)
-# - godot-organize-project/ (if orchestrators installed)
-# - godot-fix-positions/ (if orchestrators installed)
-# - godot-extract-to-scenes/ (if mini-skills installed)
-# - godot-split-scripts/ (if mini-skills installed)
-# - ... (9 more mini-skills)
+ls ~/.claude/skills/
 ```
 
-### Step 5: Restart Claude Code
+**For OpenCode:**
+```bash
+ls ~/.config/opencode/skills/
+```
+
+**For Codex:**
+```bash
+ls ~/.codex/skills/
+```
+
+**You should see:**
+- `godot-refactor/` (if orchestrators installed)
+- `godot-organize-project/` (if orchestrators installed)
+- `godot-fix-positions/` (if orchestrators installed)
+- `godot-extract-to-scenes/` (if mini-skills installed)
+- `godot-split-scripts/` (if mini-skills installed)
+- ... (9 more mini-skills)
+
+### Step 5: Restart Your AI Assistant
 
 ```bash
-# Restart Claude Code CLI to load new skills
+# For Claude Code
 exit
 claude
+
+# For OpenCode
+exit
+opencode
+
+# For Codex
+exit
+codex
 ```
 
 ## Skill Name Mapping
@@ -213,8 +255,14 @@ Best of both worlds!
 **Solution:** Use new name `godot-refactor` or install orchestrators.
 
 ```bash
-# Install orchestrators
-cp -r orchestrators/godot-refactor ~/.config/opencode/superpowers/skills/
+# For Claude Code
+cp -r orchestrators/godot-refactor ~/.claude/skills/
+
+# For OpenCode
+cp -r orchestrators/godot-refactor ~/.config/opencode/skills/
+
+# For Codex
+cp -r orchestrators/godot-refactor ~/.codex/skills/
 ```
 
 ### Issue 2: Want Old Behavior
@@ -224,8 +272,14 @@ cp -r orchestrators/godot-refactor ~/.config/opencode/superpowers/skills/
 **Solution:** Install only orchestrators, ignore mini-skills.
 
 ```bash
-# Install orchestrators only (simple workflow)
-cp -r orchestrators/* ~/.config/opencode/superpowers/skills/
+# For Claude Code
+cp -r orchestrators/* ~/.claude/skills/
+
+# For OpenCode
+cp -r orchestrators/* ~/.config/opencode/skills/
+
+# For Codex
+cp -r orchestrators/* ~/.codex/skills/
 ```
 
 ### Issue 3: Too Many Skills
@@ -235,14 +289,20 @@ cp -r orchestrators/* ~/.config/opencode/superpowers/skills/
 **Solution:** Install based on your workflow preference.
 
 ```bash
-# Minimalist: Orchestrators only (3 skills)
-cp -r orchestrators/* ~/.config/opencode/superpowers/skills/
+# For Claude Code:
+cp -r orchestrators/* ~/.claude/skills/  # Minimalist (3 skills)
+cp -r orchestrators/* mini-skills/* ~/.claude/skills/  # Maximalist (14 skills)
+cp -r mini-skills/* ~/.claude/skills/  # Granular (11 skills)
 
-# Maximalist: Everything (14 skills)
-cp -r orchestrators/* mini-skills/* ~/.config/opencode/superpowers/skills/
+# For OpenCode:
+cp -r orchestrators/* ~/.config/opencode/skills/  # Minimalist (3 skills)
+cp -r orchestrators/* mini-skills/* ~/.config/opencode/skills/  # Maximalist (14 skills)
+cp -r mini-skills/* ~/.config/opencode/skills/  # Granular (11 skills)
 
-# Granular: Mini-skills only (11 skills)
-cp -r mini-skills/* ~/.config/opencode/superpowers/skills/
+# For Codex:
+cp -r orchestrators/* ~/.codex/skills/  # Minimalist (3 skills)
+cp -r orchestrators/* mini-skills/* ~/.codex/skills/  # Maximalist (14 skills)
+cp -r mini-skills/* ~/.codex/skills/  # Granular (11 skills)
 ```
 
 ## What You Get With Each Option
@@ -309,8 +369,14 @@ cp -r orchestrators/* ~/.config/opencode/superpowers/skills/
 
 **v3.0 Recommendation:**
 ```bash
-# Install everything
-cp -r orchestrators/* mini-skills/* ~/.config/opencode/superpowers/skills/
+# For Claude Code
+cp -r orchestrators/* mini-skills/* ~/.claude/skills/
+
+# For OpenCode
+cp -r orchestrators/* mini-skills/* ~/.config/opencode/skills/
+
+# For Codex
+cp -r orchestrators/* mini-skills/* ~/.codex/skills/
 ```
 
 **New Usage:**
