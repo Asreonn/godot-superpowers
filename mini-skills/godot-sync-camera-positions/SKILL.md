@@ -1,21 +1,45 @@
 ---
 name: godot-sync-camera-positions
-summary: Sync camera-following elements for correct editor preview
+version: 3.0.0
+displayName: Sync Camera-Following Positions
 description: >
   Use when Godot background layers or elements follow the camera at runtime but
   show incorrect position in editor. Detects camera-following patterns and syncs
   editor position to match typical runtime state. Makes editor preview accurately
   show what players will see during gameplay.
-use_cases:
-  - "Background follows camera but editor shows it at (0,0)"
-  - "Camera-following layer jumps to different position when game starts"
-  - "Editor preview doesn't match gameplay view"
-  - "Level design confusing because camera elements show wrong position"
-  - "Want to see realistic gameplay view in editor"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: intermediate
+audience: [developers]
+keywords:
+  - godot
+  - camera-follow
+  - editor-preview
+  - background-layers
+  - runtime-position
+  - camera2d
+  - level-design
+  - wysiwyg
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tscn"]
+    write: [".tscn"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Synced camera-aware positions, updated .tscn files, runtime comments, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Automatic detection with calculated editor positions"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-fix-positions orchestrator, works with godot-sync-parallax"
 ---
 

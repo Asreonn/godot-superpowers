@@ -1,21 +1,45 @@
 ---
 name: godot-extract-resources
-summary: Move hardcoded data to resource files
+version: 3.0.0
+displayName: Extract Data to Resources
 description: >
   Use when Godot code has hardcoded game data in const arrays, dictionaries, or
   embedded values. Detects inline data like enemy stats, item definitions, level
   configurations. Automatically extracts to .tres resource files, making data
   visible in editor, easily modifiable, and supports data-driven design.
-use_cases:
-  - "Enemy stats (health, speed, damage) hardcoded in const arrays"
-  - "Item definitions embedded in code dictionaries"
-  - "Level configurations in scripts instead of resources"
-  - "Want to modify game data without changing code"
-  - "Need designers to edit values without touching scripts"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: beginner
+audience: [developers]
+keywords:
+  - godot
+  - resources
+  - data-driven
+  - const-arrays
+  - dictionaries
+  - tres-files
+  - gdscript
+  - game-data
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tres"]
+    write: [".gd", ".tres", ".tscn"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Resource files (.tres), Resource script definitions, updated code using resources, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Fully automatic with data preservation"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-refactor orchestrator, creates data-driven architecture"
 ---
 

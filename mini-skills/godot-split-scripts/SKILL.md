@@ -1,21 +1,45 @@
 ---
 name: godot-split-scripts
-summary: Split monolithic scripts into focused modules
+version: 3.0.0
+displayName: Split Monolithic Scripts
 description: >
   Use when Godot scripts exceed 150 lines or have multiple responsibilities.
   Detects scripts doing too many things (player movement + combat + inventory + UI).
   Automatically splits into focused scripts following Single Responsibility Principle,
   preserves behavior exactly, and creates git commits per split.
-use_cases:
-  - "Player script is 500 lines handling movement, combat, inventory, and UI"
-  - "Enemy script handles AI, attacks, health, loot, and animations"
-  - "Script does too many things and is hard to test or maintain"
-  - "Want to organize code into clear responsibilities"
-  - "Need to add functionality but script is already too complex"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: intermediate
+audience: [developers]
+keywords:
+  - godot
+  - script-splitting
+  - refactoring
+  - single-responsibility
+  - component-pattern
+  - gdscript
+  - code-organization
+  - monolithic-scripts
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tscn"]
+    write: [".gd", ".tscn"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Split scripts with single responsibilities, preserved behavior, git commits per split"
 requirements: "Git repository, Godot 4.x"
 execution: "Fully automatic with behavior validation"
-auto_rollback: "Yes - reverts on test failure"
 integration: "Part of godot-refactor orchestrator, works with godot-add-signals"
 ---
 

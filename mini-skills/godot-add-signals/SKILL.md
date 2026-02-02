@@ -1,21 +1,45 @@
 ---
 name: godot-add-signals
-summary: Replace tight coupling with signal-based architecture
+version: 3.0.0
+displayName: Replace Coupling with Signals
 description: >
   Use when Godot code has tight coupling via get_node(), get_parent(), or direct
   references creating brittle dependencies. Detects coupling patterns and transforms
   to signal-based communication. Components become independent, testable, and reusable.
   Preserves exact behavior while improving architecture.
-use_cases:
-  - "Code uses get_node('../Player') creating fragile path dependencies"
-  - "Child nodes call parent.do_something() creating tight coupling"
-  - "Components directly access other components via references"
-  - "Want to make code testable by removing hard dependencies"
-  - "Need to decouple systems for better modularity"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: intermediate
+audience: [developers]
+keywords:
+  - godot
+  - signals
+  - decoupling
+  - get-node
+  - get-parent
+  - architecture
+  - gdscript
+  - loose-coupling
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tscn"]
+    write: [".gd", ".tscn"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Signal definitions, signal connections, decoupled components, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Fully automatic with behavior preservation"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-refactor orchestrator, works with godot-split-scripts"
 ---
 

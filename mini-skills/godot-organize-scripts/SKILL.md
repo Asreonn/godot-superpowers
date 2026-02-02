@@ -1,21 +1,47 @@
 ---
 name: godot-organize-scripts
-summary: Organize script files by category and responsibility
+version: 3.0.0
+displayName: Organize Script Files
 description: >
   Use when Godot project has scripts scattered without clear organization. Detects
   scripts and organizes them by category (characters, enemies, components, managers,
   utilities). Creates clear structure showing architectural layers and relationships.
   Preserves all references and class_name declarations.
-use_cases:
-  - "Scripts scattered in multiple directories with no pattern"
-  - "Can't find specific script when needed"
-  - "Want to understand code architecture from folder structure"
-  - "Need to separate game code from engine/utility code"
-  - "Preparing codebase for team collaboration"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: beginner
+audience: [developers]
+keywords:
+  - godot
+  - script-organization
+  - gdscript
+  - file-structure
+  - code-architecture
+  - components
+  - managers
+  - best-practices
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd"]
+    write: ["*"]
+    move: true
+    delete: false
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Organized script directories, moved files with preserved references, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Fully automatic with reference preservation"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-organize-project orchestrator, works with godot-split-scripts"
 ---
 

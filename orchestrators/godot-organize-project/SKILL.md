@@ -1,11 +1,46 @@
 ---
 name: godot-organize-project
-summary: Orchestrate all project organization operations
+version: 3.0.0
+displayName: "Godot Project Organization Orchestrator"
 description: >
   Use when you need to reorganize project folder structure, consolidate similar files,
   organize resources by type, and create a clean project architecture from current folder
   chaos. Orchestrates all 3 organization mini-skills: organize-files, organize-assets,
   and organize-scripts. Each operation runs independently with reference preservation.
+author: "Asreonn"
+license: MIT
+category: game-development
+type: agent
+difficulty: beginner
+audience: [developers, teams]
+keywords:
+  - godot
+  - organization
+  - project-structure
+  - folder-structure
+  - assets
+  - scripts
+  - scenes
+  - godot4
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+filesystem:
+  read:
+    - "${PROJECT_ROOT}/**/*"
+    - "${PROJECT_ROOT}/project.godot"
+  write:
+    - "${PROJECT_ROOT}/**/*"
+  deny:
+    - "**/.env*"
+    - "**/secrets*"
+    - "**/*.key"
+    - "**/.git/**"
+behavior:
+  timeout: 300
+  retry: 2
+  cache: false
+  interactive: true
 use_cases:
   - "Project files scattered everywhere with no structure"
   - "Assets and scripts mixed in root directory"

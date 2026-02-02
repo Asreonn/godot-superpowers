@@ -1,21 +1,45 @@
 ---
 name: godot-sync-static-positions
-summary: Fix static position conflicts between editor and code
+version: 3.0.0
+displayName: Sync Static Positions
 description: >
   Use when Godot nodes have position set in both .tscn (editor) and _ready() (code),
   creating confusion about actual runtime position. Detects static position assignments
   that conflict with editor values. Syncs to single source of truth, making editor
   preview match game behavior (WYSIWYG).
-use_cases:
-  - "Node position set in _ready() doesn't match editor preview"
-  - "Editor shows node at (0,0) but game shows it elsewhere"
-  - "Want What You See Is What You Get in editor"
-  - "Position conflicts making level design confusing"
-  - "Code overrides editor-placed positions"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: beginner
+audience: [developers]
+keywords:
+  - godot
+  - position-sync
+  - editor-preview
+  - wysiwyg
+  - static-positions
+  - node-position
+  - level-design
+  - tscn-files
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tscn"]
+    write: [".gd", ".tscn"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Synced positions, updated .tscn or .gd files, clear ownership documentation, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Automatic detection with user-approved sync strategy"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-fix-positions orchestrator, works with godot-clean-conflicts"
 ---
 

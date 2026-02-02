@@ -1,12 +1,53 @@
 ---
 name: godot-refactor
-summary: Orchestrate all code quality refactoring operations
+version: 3.0.0
+displayName: "Godot Refactoring Orchestrator"
 description: >
   Use when Godot project has code-created objects, tight coupling via direct references,
   monolithic scripts over 150 lines, or needs scene-first architecture with signals and
   composition. Orchestrates all 5 code quality mini-skills: extract-to-scenes, split-scripts,
   add-signals, extract-resources, and clean-conflicts. Each operation runs independently
   with git commits and validation.
+author: "Asreonn"
+license: MIT
+category: game-development
+type: agent
+difficulty: intermediate
+audience: [developers, teams]
+keywords:
+  - godot
+  - refactoring
+  - code-quality
+  - scene-architecture
+  - signals
+  - composition
+  - gdscript
+  - clean-code
+  - godot4
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+filesystem:
+  read:
+    - "${PROJECT_ROOT}/**/*.gd"
+    - "${PROJECT_ROOT}/**/*.tscn"
+    - "${PROJECT_ROOT}/project.godot"
+    - "${PROJECT_ROOT}/**/*.tres"
+  write:
+    - "${PROJECT_ROOT}/**/*.gd"
+    - "${PROJECT_ROOT}/**/*.tscn"
+    - "${PROJECT_ROOT}/components/**"
+    - "${PROJECT_ROOT}/resources/**"
+  deny:
+    - "**/.env*"
+    - "**/secrets*"
+    - "**/*.key"
+    - "**/*.pem"
+behavior:
+  timeout: 600
+  retry: 3
+  cache: true
+  interactive: true
 use_cases:
   - "Building new features and code uses .new() instead of scenes"
   - "Scripts are over 150 lines and do too many things"

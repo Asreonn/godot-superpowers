@@ -1,21 +1,45 @@
 ---
 name: godot-extract-to-scenes
-summary: Extract code-created objects to scene files
+version: 3.0.0
+displayName: Extract Code-Created Objects to Scenes
 description: >
   Use when building Godot features and your code creates nodes with .new() instead
   of using scenes. Detects Timer.new(), Area2D.new(), Sprite2D.new() and other
   code-created objects. Automatically generates .tscn scene files, updates parent
   scripts with @onready references, and creates reusable component library.
-use_cases:
-  - "Building new feature and code uses Timer.new() instead of scene"
-  - "Code creates Area2D with Area2D.new() and add_child()"
-  - "Want to convert code-created nodes to inspector-visible scenes"
-  - "Need reusable components instead of duplicated .new() calls"
-  - "Timer or node is created in code but should be visible in editor"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: intermediate
+audience: [developers]
+keywords:
+  - godot
+  - scene-extraction
+  - component-library
+  - new-operator
+  - node-creation
+  - code-refactoring
+  - tscn-generation
+  - gdscript
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tscn", ".tres"]
+    write: [".tscn", ".tres", ".gd"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Component library with .tscn scenes, preset resources, updated parent scripts, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Fully automatic with git commits per component"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-refactor orchestrator, works with godot-split-scripts"
 ---
 

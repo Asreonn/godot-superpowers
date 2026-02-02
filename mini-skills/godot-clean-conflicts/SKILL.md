@@ -1,21 +1,45 @@
 ---
 name: godot-clean-conflicts
-summary: Remove conflicting operations and race conditions
+version: 3.0.0
+displayName: Clean Conflicting Operations
 description: >
   Use when Godot code has operations that conflict with each other, creating
   undefined behavior. Detects same property set in multiple places (_ready, _process,
   code + editor), same signal connected multiple times, conflicting physics modes,
   competing animations. Automatically resolves conflicts with clear ownership.
-use_cases:
-  - "Position set in both _ready() and editor .tscn file"
-  - "Same signal connected multiple times causing duplicate events"
-  - "Property modified in both _process() and _physics_process()"
-  - "Animation and code both trying to control same property"
-  - "Conflicting physics modes (code vs editor settings)"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: intermediate
+audience: [developers]
+keywords:
+  - godot
+  - conflicts
+  - race-conditions
+  - duplicate-signals
+  - physics-modes
+  - animation-conflicts
+  - gdscript
+  - undefined-behavior
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tscn", ".tres"]
+    write: [".gd", ".tscn"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Conflict resolution, clear ownership patterns, updated code/scenes, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Automatic detection with user-approved resolution strategy"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-refactor orchestrator, resolves architectural conflicts"
 ---
 

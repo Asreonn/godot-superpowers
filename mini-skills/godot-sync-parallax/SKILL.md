@@ -1,21 +1,45 @@
 ---
 name: godot-sync-parallax
-summary: Sync parallax layer positions for accurate editor preview
+version: 3.0.0
+displayName: Sync Parallax Layer Positions
 description: >
   Use when Godot ParallaxBackground/ParallaxLayer nodes show incorrect positions
   in editor due to parallax multipliers. Calculates correct editor positions based
   on camera start position and parallax motion scale. Makes parallax layers preview
   realistically in editor, matching gameplay appearance.
-use_cases:
-  - "Parallax background layers show at wrong positions in editor"
-  - "Parallax layers jump when game starts"
-  - "Editor preview doesn't show realistic parallax effect"
-  - "Want to design parallax backgrounds visually in editor"
-  - "ParallaxBackground motion scale affects runtime position"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: intermediate
+audience: [developers]
+keywords:
+  - godot
+  - parallax
+  - parallax-background
+  - parallax-layer
+  - motion-scale
+  - editor-preview
+  - camera-position
+  - gdscript
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".gd", ".tscn"]
+    write: [".tscn"]
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Synced parallax positions, corrected layer offsets, updated .tscn files, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Automatic calculation based on parallax properties"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-fix-positions orchestrator, specialized for parallax systems"
 ---
 

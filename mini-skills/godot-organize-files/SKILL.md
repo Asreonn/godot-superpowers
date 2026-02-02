@@ -1,21 +1,47 @@
 ---
 name: godot-organize-files
-summary: Organize project files into clear folder structure
+version: 3.0.0
+displayName: Organize Project File Structure
 description: >
   Use when Godot project has scattered files with no clear organization. Detects
   assets, scripts, scenes, and resources in root or inconsistent locations.
   Automatically creates organized directory structure following Godot best practices,
   moves files preserving references, and updates all dependencies.
-use_cases:
-  - "Project files are scattered everywhere with no structure"
-  - "Assets and scripts mixed in root directory"
-  - "Can't find files because no organizational system"
-  - "Want to prepare project for team collaboration"
-  - "Need consistent structure across projects"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: beginner
+audience: [developers]
+keywords:
+  - godot
+  - file-organization
+  - directory-structure
+  - project-cleanup
+  - best-practices
+  - asset-management
+  - gdscript
+  - godot-project
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: ["*"]
+    write: ["*"]
+    move: true
+    delete: false
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Organized directory structure, moved files with preserved references, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Fully automatic with reference preservation"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-organize-project orchestrator, works with organize-assets and organize-scripts"
 ---
 

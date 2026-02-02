@@ -1,21 +1,47 @@
 ---
 name: godot-organize-assets
-summary: Organize asset files by type and category
+version: 3.0.0
+displayName: Organize Asset Files
 description: >
   Use when Godot project has disorganized assets (sprites, audio, fonts, materials).
   Detects scattered asset files and organizes them into clear categories with
   consistent naming. Creates sprite atlases where beneficial, organizes audio by
   type, and groups related assets together.
-use_cases:
-  - "Sprites scattered across multiple directories"
-  - "Audio files mixed with no organization"
-  - "Can't find specific asset when needed"
-  - "Want to create sprite atlases for performance"
-  - "Need consistent asset naming"
+author: Asreonn
+license: MIT
+category: game-development
+type: tool
+difficulty: beginner
+audience: [developers]
+keywords:
+  - godot
+  - asset-organization
+  - sprites
+  - audio
+  - sprite-atlases
+  - file-structure
+  - performance
+  - assets
+platforms: [macos, linux, windows]
+repository: https://github.com/asreonn/godot-superpowers
+homepage: https://github.com/asreonn/godot-superpowers#readme
+
+permissions:
+  filesystem:
+    read: [".png", ".jpg", ".wav", ".ogg", ".ttf", ".glb", ".tres"]
+    write: ["*"]
+    move: true
+    delete: false
+  git: true
+
+behavior:
+  auto_rollback: true
+  validation: true
+  git_commits: true
+
 outputs: "Organized asset directories, moved files, sprite atlases, naming consistency, git commits"
 requirements: "Git repository, Godot 4.x"
 execution: "Fully automatic with reference preservation"
-auto_rollback: "Yes - reverts on validation failure"
 integration: "Part of godot-organize-project orchestrator, works with godot-organize-files"
 ---
 
