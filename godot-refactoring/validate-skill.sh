@@ -1,19 +1,30 @@
 #!/bin/bash
 # Validation script for godot-refactoring skill
 
-SKILL_DIR="$HOME/.config/opencode/skills/godot-refactoring"
+SKILL_DIR="${1:-.}"
+# If not provided, use current directory
+if [ ! -f "$SKILL_DIR/SKILL.md" ]; then
+    SKILL_DIR="$HOME/.config/opencode/superpowers/skills/godot-refactoring"
+fi
 echo "Validating Godot Refactoring Skill..."
 echo ""
 
 # Check all required files exist
 FILES=(
     "SKILL.md"
-    "anti-patterns-detection.md"
-    "tscn-generation-guide.md"
-    "godot-best-practices.md"
-    "refactoring-operations.md"
-    "verification-checklist.md"
     "README.md"
+    "INDEX.md"
+    "EXAMPLES.md"
+    "docs/anti-patterns-detection.md"
+    "docs/tscn-generation-guide.md"
+    "docs/godot-best-practices.md"
+    "docs/refactoring-operations.md"
+    "docs/verification-checklist.md"
+    "docs/godot-node-reference.md"
+    "docs/node-selection-guide.md"
+    "docs/scene-reusability-patterns.md"
+    "docs/conflicting-operations-detection.md"
+    "docs/IMPLEMENTATION_SUMMARY.md"
 )
 
 echo "Checking required files..."
@@ -46,11 +57,11 @@ echo ""
 
 # Check file sizes
 echo "File sizes:"
-du -h "$SKILL_DIR"/*.md | sort -h
+find "$SKILL_DIR" -name "*.md" | sort | xargs -I {} bash -c 'echo "{}" | sed "s|$SKILL_DIR/||"; du -h "{}"' | sort -k2h
 echo ""
 
 # Total line count
-total=$(wc -l "$SKILL_DIR"/*.md | tail -1 | awk '{print $1}')
+total=$(find "$SKILL_DIR" -name "*.md" -exec wc -l {} + | tail -1 | awk '{print $1}')
 echo "Total lines: $total"
 echo ""
 
