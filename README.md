@@ -1,372 +1,248 @@
 # Godot Superpowers 🚀
 
-Professional Godot project automation skills for AI coding assistants (Claude Code, OpenCode, Codex).
+Professional-grade Godot 4.x automation skills for AI coding assistants (Claude Code, OpenCode, Codex).
 
-**Version 3.0.0** - Now with modular mini-skills architecture!
+**Version 4.0.0** - Production-ready with full Godot 4.x support! 🎉
 
-## Quick Install
+---
 
-### For Claude Code CLI
+## ✨ What's New in v4.0
+
+**29 Total Skills** (up from 14 in v3.0)
+
+### 🆕 15 New Godot 4.x Skills
+
+**Critical Priority (P0):**
+- `godot-modernize-gdscript` - GDScript 1.0 → 2.0 migration
+- `godot-migrate-tilemap` - TileMap → TileMapLayer (Godot 4.3+)
+
+**High Priority (P1):**
+- `godot-profile-performance` - Performance bottleneck detection
+- `godot-generate-tests` - GUT test generation
+- `godot-setup-navigation` - NavigationServer setup
+- `godot-setup-multiplayer` - New multiplayer API setup
+- `godot-optimize-rendering` - Rendering optimization
+- `godot-setup-animationtree` - AnimationTree state machines
+
+**Medium Priority (P2):**
+- `godot-convert-shaders` - Shader conversion (3.x → 4.x)
+- `godot-setup-csharp` - C# integration
+- `godot-modernize-ui` - UI modernization
+- `godot-setup-audio-buses` - Audio bus architecture
+- `godot-setup-export` - Multi-platform exports
+
+**Low Priority (P3):**
+- `godot-modernize-input` - Input system modernization
+- `godot-create-plugin` - Editor plugin creation
+
+---
+
+## 📦 Quick Install
 
 ```bash
+# Clone the repository
 git clone https://github.com/asreonn/godot-superpowers.git
 cd godot-superpowers
 
-# Install all skills
+# Install for Claude Code
 cp -r mini-skills/* orchestrators/* ~/.claude/skills/
-```
 
-### For OpenCode
-
-```bash
-git clone https://github.com/asreonn/godot-superpowers.git
-cd godot-superpowers
-
-# Install all skills
+# Install for OpenCode
 cp -r mini-skills/* orchestrators/* ~/.config/opencode/skills/
-```
 
-### For Codex CLI
-
-```bash
-git clone https://github.com/asreonn/godot-superpowers.git
-cd godot-superpowers
-
-# Install all skills
+# Install for Codex CLI
 cp -r mini-skills/* orchestrators/* ~/.codex/skills/
 ```
 
-### Verify Installation
+---
 
-Restart your AI assistant and the skills will be available:
+## 📋 All 29 Skills
 
-```bash
-# For Claude Code
-claude
+### 🎛️ Orchestrators (3)
+High-level coordination skills that run multiple mini-skills:
 
-# For OpenCode
-opencode
+1. **`godot-refactor`** - Comprehensive code quality refactoring
+   - Orchestrates: extract-to-scenes, split-scripts, add-signals, extract-resources, clean-conflicts
 
-# For Codex
-codex
+2. **`godot-organize-project`** - Project structure organization
+   - Orchestrates: organize-files, organize-assets, organize-scripts
+
+3. **`godot-fix-positions`** - Editor/code position synchronization
+   - Orchestrates: sync-static-positions, sync-camera-positions, sync-parallax
+
+### 🔧 Core Godot 4.x Skills (15)
+
+**Migration & Modernization:**
+- `godot-modernize-gdscript` - Convert yield→await, onready→@onready, export→@export
+- `godot-migrate-tilemap` - Migrate to TileMapLayer system (Godot 4.3+)
+- `godot-convert-shaders` - Convert Godot 3.x shaders to 4.x
+- `godot-modernize-ui` - Modernize UI to Godot 4.x best practices
+- `godot-modernize-input` - Modernize input handling
+
+**Performance & Quality:**
+- `godot-profile-performance` - Detect bottlenecks in _process, get_node() loops
+- `godot-optimize-rendering` - Optimize Forward+/Mobile/Compatibility renderers
+- `godot-generate-tests` - Generate GUT unit tests
+
+**System Setup:**
+- `godot-setup-navigation` - Setup NavigationServer with pathfinding
+- `godot-setup-multiplayer` - Setup MultiplayerSpawner, RPC, authority
+- `godot-setup-animationtree` - Setup AnimationTree state machines
+- `godot-setup-audio-buses` - Setup Master/Music/SFX bus architecture
+- `godot-setup-csharp` - Setup C# integration
+- `godot-setup-export` - Setup multi-platform exports
+- `godot-create-plugin` - Create Godot Editor plugins
+
+### 🛠️ Original Mini-Skills (11)
+
+**Code Quality:**
+- `godot-extract-to-scenes` - Convert Timer.new() to .tscn files
+- `godot-split-scripts` - Split monolithic scripts >150 lines
+- `godot-add-signals` - Replace get_node() with signals
+- `godot-extract-resources` - Move const data to .tres files
+- `godot-clean-conflicts` - Clean position conflicts, duplicate signals
+
+**Organization:**
+- `godot-organize-files` - Organize project folder structure
+- `godot-organize-assets` - Organize assets by type
+- `godot-organize-scripts` - Organize scripts by category
+
+**Position Sync:**
+- `godot-sync-static-positions` - Fix editor vs _ready() positions
+- `godot-sync-camera-positions` - Camera-aware positioning
+- `godot-sync-parallax` - Parallax layer sync
+
+---
+
+## 🎯 Use Cases
+
+### Godot 3.x → 4.x Migration
+```
+1. godot-modernize-gdscript    # Update syntax
+2. godot-migrate-tilemap       # Update TileMap (4.3+)
+3. godot-convert-shaders       # Update shaders
+4. godot-modernize-ui          # Update UI
+5. godot-setup-multiplayer     # Update networking
 ```
 
-## What's New in v3.0
-
-Godot Superpowers has been restructured into **mini-skills** and **orchestrators** for maximum flexibility:
-
-- **11 focused mini-skills** - Each handles one specific operation
-- **3 orchestrator skills** - Run multiple mini-skills in sequence
-- **Use individually or combined** - Choose the right tool for your task
-
-## What's Included
-
-### Mini-Skills (Individual Operations)
-
-Run specific operations without full refactoring workflows:
-
-#### Code Quality Mini-Skills
-- **godot-extract-to-scenes** - Convert code-created objects (Timer.new()) to .tscn files
-- **godot-split-scripts** - Split monolithic scripts over 150 lines
-- **godot-add-signals** - Replace get_node coupling with signals
-- **godot-extract-resources** - Move const data to .tres resource files
-- **godot-clean-conflicts** - Remove conflicting operations (position conflicts, duplicate signals)
-
-#### Project Organization Mini-Skills
-- **godot-organize-files** - Organize project folder structure
-- **godot-organize-assets** - Organize assets by type (sprites, audio, fonts)
-- **godot-organize-scripts** - Organize scripts by category (characters, enemies, components)
-
-#### Position Sync Mini-Skills
-- **godot-sync-static-positions** - Fix static position conflicts (editor vs _ready)
-- **godot-sync-camera-positions** - Camera-aware positioning for backgrounds
-- **godot-sync-parallax** - Parallax layer editor preview sync
-
-### Orchestrator Skills (Run Multiple Operations)
-
-For full project refactoring, these orchestrators run multiple mini-skills:
-
-#### 1. godot-refactor (Code Quality)
-Runs all 5 code quality mini-skills in sequence.
-
-**Use when:**
-- Full project refactoring needed
-- Multiple anti-patterns detected
-- Want comprehensive code cleanup
-
-**Orchestrates:** godot-extract-to-scenes, godot-split-scripts, godot-add-signals, godot-extract-resources, godot-clean-conflicts
-
-#### 2. godot-organize-project (Organization)
-Runs all 3 organization mini-skills in sequence.
-
-**Use when:**
-- Project files scattered everywhere
-- Need complete structural reorganization
-- Preparing project for team collaboration
-
-**Orchestrates:** godot-organize-files, godot-organize-assets, godot-organize-scripts
-
-#### 3. godot-fix-positions (Position Sync)
-Runs all 3 position sync mini-skills in sequence.
-
-**Use when:**
-- Multiple position conflict types
-- Camera-following + parallax + static conflicts
-- Want comprehensive position sync
-
-**Orchestrates:** godot-sync-static-positions, godot-sync-camera-positions, godot-sync-parallax
-
-## Installation Options
-
-### Option A: Install Everything (Recommended)
-
-```bash
-# For Claude Code
-cp -r mini-skills/* orchestrators/* ~/.claude/skills/
-
-# For OpenCode
-cp -r mini-skills/* orchestrators/* ~/.config/opencode/skills/
-
-# For Codex
-cp -r mini-skills/* orchestrators/* ~/.codex/skills/
+### Performance Optimization
+```
+1. godot-profile-performance   # Find bottlenecks
+2. godot-optimize-rendering    # Optimize rendering
 ```
 
-### Option B: Install Only Mini-Skills (Granular Control)
-
-```bash
-# For Claude Code
-cp -r mini-skills/* ~/.claude/skills/
-
-# For OpenCode
-cp -r mini-skills/* ~/.config/opencode/skills/
-
-# For Codex
-cp -r mini-skills/* ~/.codex/skills/
+### New Project Setup
+```
+1. godot-organize-project      # Organize structure
+2. godot-setup-navigation      # Add pathfinding
+3. godot-setup-audio-buses     # Setup audio
+4. godot-setup-export          # Configure exports
 ```
 
-### Option C: Install Only Orchestrators (Simple Workflow)
+---
 
-```bash
-# For Claude Code
-cp -r orchestrators/* ~/.claude/skills/
+## 🚀 How to Use
 
-# For OpenCode
-cp -r orchestrators/* ~/.config/opencode/skills/
-
-# For Codex
-cp -r orchestrators/* ~/.codex/skills/
+### Example: Modernize GDScript
+```
+User: "Convert my Godot 3.x code to 4.x"
+AI: Invokes godot-modernize-gdscript
+Result: yield→await, onready→@onready, export→@export, etc.
 ```
 
-### Option D: Install Specific Skills
-
-```bash
-# Example: Install only extract-to-scenes mini-skill
-# For Claude Code
-cp -r mini-skills/godot-extract-to-scenes ~/.claude/skills/
-
-# For OpenCode
-cp -r mini-skills/godot-extract-to-scenes ~/.config/opencode/skills/
-
-# For Codex
-cp -r mini-skills/godot-extract-to-scenes ~/.codex/skills/
+### Example: Full Refactor
+```
+User: "Clean up my entire project"
+AI: Invokes godot-refactor orchestrator
+Result: All 5 code quality operations run automatically
 ```
 
-## How to Use
-
-### Choosing Between Mini-Skills and Orchestrators
-
-**Use mini-skills when:**
-- You have a specific problem (e.g., "code creates timers with Timer.new()")
-- Want to run one operation without full refactoring
-- Need granular control over what changes
-
-**Use orchestrators when:**
-- Want comprehensive project cleanup
-- Multiple operations needed
-- Don't mind running full workflow
-
-### Example: Individual Mini-Skill
-
+### Example: Setup Navigation
 ```
-> I have code that creates timers with Timer.new() instead of scenes
-
-AI will invoke: godot-extract-to-scenes
-Result: Only extracts Timer objects, doesn't touch anything else
+User: "Add pathfinding to my game"
+AI: Invokes godot-setup-navigation
+Result: NavigationRegion2D, NavigationAgent setup
 ```
 
-### Example: Orchestrator
+---
 
-```
-> Clean up my entire Godot project
+## ✅ Requirements
 
-AI will invoke: godot-refactor
-Result: Runs all 5 code quality operations (extract, split, signals, resources, conflicts)
-```
+- **Godot 4.0+** (4.3+ for TileMap V2)
+- **Git** repository initialized
+- **AI Assistant:** Claude Code, OpenCode, or Codex CLI
+- **Bash/Shell** environment
 
-### Example: Position Sync
+---
 
-```
-> My background follows the camera but shows wrong position in editor
+## 📊 Statistics
 
-AI will invoke: godot-sync-camera-positions
-Result: Only syncs camera-following elements, doesn't touch static positions
-```
+| Metric | Value |
+|--------|-------|
+| Total Skills | **29** |
+| Orchestrators | 3 |
+| Mini-Skills | 26 |
+| Godot 4.x Skills | 15 |
+| Lines of Documentation | 25,000+ |
+| Validation Pass Rate | 100% |
 
-### Common Use Cases
+---
 
-**Building New Features**
-```
-Problem: "My new code uses Timer.new() instead of scenes"
-Mini-Skill: godot-extract-to-scenes
-Time: ~30 seconds per component
-```
+## 📚 Documentation
 
-**Legacy Code Cleanup**
-```
-Problem: "Inherited messy codebase with many issues"
-Orchestrator: godot-refactor
-Time: ~5-15 minutes depending on project size
-```
-
-**Level Design**
-```
-Problem: "Background position wrong in editor"
-Mini-Skill: godot-sync-camera-positions
-Time: ~10 seconds per background
-```
-
-**Team Onboarding**
-```
-Problem: "Need to organize project for new team member"
-Orchestrator: godot-organize-project
-Time: ~2-5 minutes depending on project size
-```
-
-## Requirements
-
-- **AI Assistant** - One of:
-  - [Claude Code CLI](https://github.com/anthropics/claude-code) - Official CLI from Anthropic
-  - [OpenCode](https://opencode.ai/) - Open-source alternative
-  - [Codex CLI](https://codex.so/) - OpenAI's CLI tool
-- **Godot 4.x** - [Download from godotengine.org](https://godotengine.org/)
-- **Git** - For version control
-- **Unix tools** - grep, find, awk (pre-installed on Linux/Mac, included in Git Bash on Windows)
-
-## Skills Directory Locations
-
-Skills are automatically discovered from these directories:
-
-| AI Assistant | Skills Directory |
-|-------------|------------------|
-| Claude Code | `~/.claude/skills/` |
-| OpenCode | `~/.config/opencode/skills/` |
-| Codex CLI | `~/.codex/skills/` |
-
-## Features
-
-### Modular Architecture
-- Run individual operations or full workflows
-- Each mini-skill is independent
-- Orchestrators combine mini-skills intelligently
-- Clear separation of concerns
-
-### Intelligent Detection
-- 9 decision trees for automatic node type detection
-- Pattern matching on variables, properties, methods
-- 80+ Godot node catalog
-- Smart conflict classification
-
-### Safety First
-- Git baseline before changes
-- Per-operation validation
-- Automatic rollback on failure
-- Iron Law: NO functional changes
-
-## Migration from v2.x
-
-If you're upgrading from v2.x:
-
-**Old skill names (v2.x):**
-- `godot-refactoring`
-- `project-structure-organizer`
-- `editor-position-sync`
-
-**New names (v3.0):**
-- `godot-refactor` (orchestrator)
-- `godot-organize-project` (orchestrator)
-- `godot-fix-positions` (orchestrator)
-
-Plus 11 new mini-skills for granular operations.
-
-**Also update installation paths:**
-- Old: `~/.config/opencode/superpowers/skills/`
-- New Claude Code: `~/.claude/skills/`
-- New OpenCode: `~/.config/opencode/skills/`
-- New Codex: `~/.codex/skills/`
-
-See [MIGRATION.md](./MIGRATION.md) for detailed migration guide.
-
-## Documentation
-
-- [Migration Guide](./MIGRATION.md) - v2.x → v3.0 upgrade instructions
+- [Release Notes](./RELEASE_NOTES.md) - v4.0.0 release details
 - [Changelog](./CHANGELOG.md) - Version history
-- [Contributing](./CONTRIBUTING.md) - How to contribute
-- [Orchestrators](./orchestrators/) - Full workflow documentation
-- [Mini-Skills](./mini-skills/) - Individual operation documentation
+- [Vision & Strategy](./docs/01_VISION_AND_STRATEGY.md) - Project roadmap
+- [Godot 4.x Requirements](./docs/02_GODOT4_REQUIREMENTS.md) - Feature specs
+- [Implementation Roadmap](./docs/03_IMPLEMENTATION_ROADMAP.md) - Detailed plan
+- [AGENTS.md](./AGENTS.md) - AI agent instructions
 
-## Statistics
+---
 
-- **14 total skills** (11 mini-skills + 3 orchestrators)
-- **15,000+ lines** of comprehensive documentation
-- **Compatible** with Claude Code, OpenCode, and Codex CLI
-- **Production ready** and battle-tested
+## 🏗️ Infrastructure
 
-## Quick Start
+- ✅ GitHub Actions CI/CD pipeline
+- ✅ SKILL.md v2.0 validation scripts
+- ✅ Test framework (pytest)
+- ✅ Cross-platform support (Windows, macOS, Linux)
 
-1. Install your preferred AI assistant (Claude Code, OpenCode, or Codex)
-2. Clone this repository
-3. Copy skills to appropriate directory (see installation section)
-4. Open your Godot project
-5. Ask your AI assistant for help with specific problems
-6. AI automatically invokes appropriate skills
+---
 
-## Resources & References
+## 🔧 Validation
 
-Based on official documentation and community resources:
+```bash
+# Check all skills
+python scripts/validate_skills.py
 
-**Claude Code:**
-- [Official Documentation](https://code.claude.com/docs/en/skills)
-- [Skills Setup Guide](https://code.claude.com/docs/en/setup)
-- [GitHub Repository](https://github.com/anthropics/claude-code)
+# Check frontmatter
+python scripts/check_frontmatter.py
 
-**OpenCode:**
-- [Official Skills Documentation](https://opencode.ai/docs/skills)
-- [Superpowers Framework](https://github.com/obra/superpowers)
-- [OpenCode Skills Installation](https://github.com/obra/superpowers/blob/main/.opencode/INSTALL.md)
+# Run tests
+pytest tests/ -v
+```
 
-**Codex CLI:**
-- [Skills in Codex](https://blog.fsck.com/2025/12/19/codex-skills/)
-- [Porting Skills to Codex](https://blog.fsck.com/2025/10/27/skills-for-openai-codex/)
+---
 
-**Skills Marketplace:**
-- [SkillsMP](https://skillsmp.com/) - 71,000+ agent skills compatible with Claude Code, Codex, and more
+## 🤝 Contributing
 
-## License
+Contributions welcome! All skills follow SKILL.md v2.0 format with:
+- YAML frontmatter
+- Before/after examples
+- Validation tests
+- Clear documentation
+
+---
+
+## 📜 License
 
 MIT License - See [LICENSE](./LICENSE)
 
 Godot is © Copyright 2014-present Juan Linietsky, Ariel Manzur and the Godot community.
 
-## Contributing
+---
 
-Contributions welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md)
+## 💙 Created for the Godot Community
 
-## Created for the Godot Community
+These skills automate tedious Godot development tasks while maintaining clean, professional-grade code quality.
 
-These skills are designed to help Godot developers maintain clean, modular projects with professional-grade automation. 💙
-
-## Support & Issues
-
-- 📋 [GitHub Issues](https://github.com/asreonn/godot-superpowers/issues) - Report bugs or suggest features
-- 💬 [GitHub Discussions](https://github.com/asreonn/godot-superpowers/discussions) - Ask questions
-- 📖 [Documentation](./orchestrators/) - Detailed guides and examples
+**Happy Game Development! 🎮**
