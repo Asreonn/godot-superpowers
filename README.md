@@ -1,5 +1,7 @@
 # Godot Superpowers 🚀
 
+> **Status:** v4.0.0 released (Feb 2026).
+
 Professional-grade Godot 4.x automation skills for AI coding assistants (Claude Code, OpenCode, Codex).
 
 **Version 4.0.0** - Production-ready with full Godot 4.x support! 🎉
